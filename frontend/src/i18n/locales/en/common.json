@@ -1,0 +1,32 @@
+{
+  "loading": "Loading",
+  "error": "Error",
+  "success": "Success",
+  "cancel": "Cancel",
+  "save": "Save",
+  "delete": "Delete",
+  "edit": "Edit",
+  "add": "Add",
+  "search": "Search",
+  "logout": "Logout",
+  "back": "Back",
+  "pagination": {
+    "showing": "Showing {{start}} to {{end}} of {{total}} results",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "landing": {
+    "tagline": "Your personalized gateway to the world’s news. Discover, bookmark, and customize your news experience across sources and languages.",
+    "ctaLogin": "Sign In",
+    "ctaRegister": "Create Account",
+    "noAccount": "No account yet? Create one for free!",
+    "featuresTitle": "Why Choose Nanle News Aggregator?",
+    "feature1Title": "All Your News, One Place",
+    "feature1Desc": "Aggregate news from top sources and categories, personalized for you.",
+    "feature2Title": "Bookmark & Customize",
+    "feature2Desc": "Save articles, set preferences, and tailor your reading experience.",
+    "feature3Title": "Multilingual & Accessible",
+    "feature3Desc": "Read in your language, enjoy dark mode, and listen to articles with text-to-speech.",
+    "rights": "All rights reserved."
+  }
+}

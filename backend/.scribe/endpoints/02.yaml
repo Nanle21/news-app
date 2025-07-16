@@ -1,0 +1,843 @@
+name: Articles
+description: |-
+
+  Article management and search functionality.
+  All filtering is performed on local database data, not live sources.
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/articles/search
+    metadata:
+      groupName: Articles
+      groupDescription: |-
+
+        Article management and search functionality.
+        All filtering is performed on local database data, not live sources.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Search Articles'
+      description: 'Search and filter articles from the local database. All filtering is performed on local data, not live sources.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      q:
+        name: q
+        description: 'Search term to filter articles by title, content, or author.'
+        required: false
+        example: Wimbledon
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      start_date:
+        name: start_date
+        description: 'Start date for filtering (Y-m-d format).'
+        required: false
+        example: '2025-07-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      end_date:
+        name: end_date
+        description: 'End date for filtering (Y-m-d format).'
+        required: false
+        example: '2025-07-13'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      category_id:
+        name: category_id
+        description: 'Filter by category ID.'
+        required: false
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      source_id:
+        name: source_id
+        description: 'Filter by source ID.'
+        required: false
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Number of articles per page (1-100). Default: 15.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      sort_by:
+        name: sort_by
+        description: 'Sort field (published_at, title, source_id, category_id). Default: published_at.'
+        required: false
+        example: published_at
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      sort_order:
+        name: sort_order
+        description: 'Sort order (asc, desc). Default: desc.'
+        required: false
+        example: desc
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanQueryParameters:
+      q: Wimbledon
+      start_date: '2025-07-01'
+      end_date: '2025-07-13'
+      category_id: 2
+      source_id: 11
+      per_page: 10
+      sort_by: published_at
+      sort_order: desc
+    bodyParameters:
+      q:
+        name: q
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: b
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      start_date:
+        name: start_date
+        description: 'Must be a valid date.'
+        required: false
+        example: '2025-07-13T21:07:49'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      end_date:
+        name: end_date
+        description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+        required: false
+        example: '2051-08-06'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: false
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      source_id:
+        name: source_id
+        description: ''
+        required: false
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1. Must not be greater than 100.'
+        required: false
+        example: 22
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      sort_by:
+        name: sort_by
+        description: ''
+        required: false
+        example: category_id
+        type: string
+        enumValues:
+          - published_at
+          - title
+          - source_id
+          - category_id
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      sort_order:
+        name: sort_order
+        description: ''
+        required: false
+        example: asc
+        type: string
+        enumValues:
+          - asc
+          - desc
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      q: b
+      start_date: '2025-07-13T21:07:49'
+      end_date: '2051-08-06'
+      category_id: 16
+      source_id: 16
+      per_page: 22
+      sort_by: category_id
+      sort_order: asc
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "data": [
+              {
+                "id": 12,
+                "title": "Wimbledon 2025 men's singles final: Jannik Sinner v Carlos Alcaraz – live",
+                "content": "Game-by-game report: Who will take home the title...",
+                "url": "https://www.theguardian.com/sport/live/2025/jul/13/wimbledon-mens-singles-final...",
+                "image_url": "https://media.guim.co.uk/941ac97c2acc6715d1dbf122f1f2d6310e4801f8/1389_11_3937_3150/500.jpg",
+                "author": "Daniel Harris",
+                "published_at": "2025-07-13T18:22:52.000000Z",
+                "source_id": 11,
+                "category_id": 2,
+                "source": {
+                  "id": 11,
+                  "name": "The Guardian",
+                  "url": "https://www.theguardian.com",
+                  "description": "The Guardian - British daily newspaper",
+                  "is_active": true
+                },
+                "category": {
+                  "id": 2,
+                  "name": "Sports",
+                  "description": "Sports news and updates"
+                }
+              }
+            ],
+            "meta": {
+              "current_page": 1,
+              "last_page": 27,
+              "per_page": 3,
+              "total": 80,
+              "total_articles_in_database": 80,
+              "search_performed_on": "local_database",
+              "filters_applied": {
+                "search_term": "Wimbledon",
+                "date_range": [],
+                "category_id": null,
+                "source_id": null
+              }
+            }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/articles/categories
+    metadata:
+      groupName: Articles
+      groupDescription: |-
+
+        Article management and search functionality.
+        All filtering is performed on local database data, not live sources.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Categories'
+      description: 'Get all available article categories.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "data": [
+              {
+                "id": 1,
+                "name": "Technology",
+                "description": "Latest technology news and updates"
+              }
+            ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/articles/sources
+    metadata:
+      groupName: Articles
+      groupDescription: |-
+
+        Article management and search functionality.
+        All filtering is performed on local database data, not live sources.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Sources'
+      description: 'Get all active news sources.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "data": [
+              {
+                "id": 11,
+                "name": "The Guardian",
+                "url": "https://www.theguardian.com",
+                "description": "The Guardian - British daily newspaper",
+                "is_active": true
+              }
+            ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/articles/feed
+    metadata:
+      groupName: Articles
+      groupDescription: |-
+
+        Article management and search functionality.
+        All filtering is performed on local database data, not live sources.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Personalized Feed'
+      description: 'Get a personalized news feed based on user preferences. All filtering is performed on local database data.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      q:
+        name: q
+        description: 'Search term to filter articles by title, content, or author.'
+        required: false
+        example: technology
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      start_date:
+        name: start_date
+        description: 'Start date for filtering (Y-m-d format).'
+        required: false
+        example: '2025-07-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      end_date:
+        name: end_date
+        description: 'End date for filtering (Y-m-d format).'
+        required: false
+        example: '2025-07-13'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Number of articles per page (1-100). Default: 15.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      sort_by:
+        name: sort_by
+        description: 'Sort field (published_at, title, source_id, category_id). Default: published_at.'
+        required: false
+        example: published_at
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      sort_order:
+        name: sort_order
+        description: 'Sort order (asc, desc). Default: desc.'
+        required: false
+        example: desc
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanQueryParameters:
+      q: technology
+      start_date: '2025-07-01'
+      end_date: '2025-07-13'
+      per_page: 10
+      sort_by: published_at
+      sort_order: desc
+    bodyParameters:
+      q:
+        name: q
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: b
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      start_date:
+        name: start_date
+        description: 'Must be a valid date.'
+        required: false
+        example: '2025-07-13T21:07:49'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      end_date:
+        name: end_date
+        description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+        required: false
+        example: '2051-08-06'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Must be at least 1. Must not be greater than 100.'
+        required: false
+        example: 22
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      sort_by:
+        name: sort_by
+        description: ''
+        required: false
+        example: title
+        type: string
+        enumValues:
+          - published_at
+          - title
+          - source_id
+          - category_id
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      sort_order:
+        name: sort_order
+        description: ''
+        required: false
+        example: desc
+        type: string
+        enumValues:
+          - asc
+          - desc
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      q: b
+      start_date: '2025-07-13T21:07:49'
+      end_date: '2051-08-06'
+      per_page: 22
+      sort_by: title
+      sort_order: desc
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "data": [
+              {
+                "id": 12,
+                "title": "Wimbledon 2025 men's singles final: Jannik Sinner v Carlos Alcaraz – live",
+                "content": "Game-by-game report: Who will take home the title...",
+                "url": "https://www.theguardian.com/sport/live/2025/jul/13/wimbledon-mens-singles-final...",
+                "image_url": "https://media.guim.co.uk/941ac97c2acc6715d1dbf122f1f2d6310e4801f8/1389_11_3937_3150/500.jpg",
+                "author": "Daniel Harris",
+                "published_at": "2025-07-13T18:22:52.000000Z",
+                "source_id": 11,
+                "category_id": 2,
+                "source": {
+                  "id": 11,
+                  "name": "The Guardian",
+                  "url": "https://www.theguardian.com",
+                  "description": "The Guardian - British daily newspaper",
+                  "is_active": true
+                },
+                "category": {
+                  "id": 2,
+                  "name": "Sports",
+                  "description": "Sports news and updates"
+                }
+              }
+            ],
+            "meta": {
+              "current_page": 1,
+              "last_page": 27,
+              "per_page": 3,
+              "total": 80,
+              "total_articles_in_database": 80,
+              "feed_type": "personalized",
+              "search_performed_on": "local_database",
+              "user_preferences_applied": true,
+              "filters_applied": {
+                "search_term": "technology",
+                "date_range": []
+              }
+            }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/articles/preferences
+    metadata:
+      groupName: Articles
+      groupDescription: |-
+
+        Article management and search functionality.
+        All filtering is performed on local database data, not live sources.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get User Preferences'
+      description: "Get the current user's news preferences."
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "preferences": {
+              "id": 1,
+              "user_id": 1,
+              "preferred_sources": [11, 16],
+              "preferred_categories": [1, 2],
+              "preferred_authors": ["John Doe"],
+              "include_all_sources": false,
+              "include_all_categories": false,
+              "include_all_authors": true
+            }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/articles/preferences
+    metadata:
+      groupName: Articles
+      groupDescription: |-
+
+        Article management and search functionality.
+        All filtering is performed on local database data, not live sources.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update User Preferences'
+      description: "Update the current user's news preferences."
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      preferred_sources:
+        name: preferred_sources
+        description: 'optional Array of source IDs.'
+        required: false
+        example:
+          - 11
+          - 16
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      preferred_categories:
+        name: preferred_categories
+        description: 'optional Array of category IDs.'
+        required: false
+        example:
+          - 1
+          - 2
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      preferred_authors:
+        name: preferred_authors
+        description: 'optional Array of author names.'
+        required: false
+        example:
+          - 'John Doe'
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      include_all_sources:
+        name: include_all_sources
+        description: 'optional Include all sources.'
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      include_all_categories:
+        name: include_all_categories
+        description: 'optional Include all categories.'
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      include_all_authors:
+        name: include_all_authors
+        description: 'optional Include all authors.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      preferred_sources:
+        - 11
+        - 16
+      preferred_categories:
+        - 1
+        - 2
+      preferred_authors:
+        - 'John Doe'
+      include_all_sources: false
+      include_all_categories: false
+      include_all_authors: true
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "message": "Preferences updated successfully",
+            "preferences": {
+              "id": 1,
+              "user_id": 1,
+              "preferred_sources": [11, 16],
+              "preferred_categories": [1, 2],
+              "preferred_authors": ["John Doe"],
+              "include_all_sources": false,
+              "include_all_categories": false,
+              "include_all_authors": true
+            }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/articles/preferences
+    metadata:
+      groupName: Articles
+      groupDescription: |-
+
+        Article management and search functionality.
+        All filtering is performed on local database data, not live sources.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Reset User Preferences'
+      description: "Reset the current user's news preferences to default values."
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "message": "Preferences reset to default",
+            "preferences": {
+              "id": 1,
+              "user_id": 1,
+              "preferred_sources": null,
+              "preferred_categories": null,
+              "preferred_authors": null,
+              "include_all_sources": true,
+              "include_all_categories": true,
+              "include_all_authors": true
+            }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+    custom: []

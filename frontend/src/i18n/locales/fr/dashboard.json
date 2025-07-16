@@ -1,0 +1,11 @@
+{
+  "title": "Tableau de bord",
+  "description": "Bon retour ! Voici ce qui se passe avec votre flux d'actualités.",
+  "totalArticles": "Total des articles",
+  "bookmarks": "Favoris",
+  "sources": "Sources de données",
+  "todaysNews": "Actualités du jour",
+  "recentNews": "Actualités récentes",
+  "readMore": "Lire la suite",
+  "greeting": "Bonjour, {{name}} ! Bon retour sur votre tableau de bord personnalisé."
+}

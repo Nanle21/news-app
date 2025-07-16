@@ -1,0 +1,6 @@
+{
+  "pageNotFound": "404 - Seite nicht gefunden",
+  "pageNotFoundDescription": "Die gesuchte Seite existiert nicht.",
+  "workInProgress": "🚧 In Bearbeitung",
+  "workInProgressDescription": "Diese Seite ist noch nicht verfügbar. Wir arbeiten daran !"
+}

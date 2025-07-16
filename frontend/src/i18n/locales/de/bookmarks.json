@@ -1,0 +1,10 @@
+{
+  "title": "Lesezeichen",
+  "description": "Ihre gespeicherten Artikel",
+  "loadingBookmarks": "Lesezeichen werden geladen...",
+  "failedToLoadBookmarks": "Lesezeichen konnten nicht geladen werden",
+  "noBookmarksWithFilters": "Keine Lesezeichen entsprechen Ihren Filtern.",
+  "noBookmarks": "Keine Lesezeichen gefunden.",
+  "bookmarkRemoved": "Lesezeichen erfolgreich entfernt",
+  "failedToRemoveBookmark": "Lesezeichen konnte nicht entfernt werden"
+} 

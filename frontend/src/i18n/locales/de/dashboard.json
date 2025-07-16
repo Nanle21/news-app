@@ -1,0 +1,11 @@
+{
+  "title": "Dashboard",
+  "description": "Willkommen zurück! Hier ist, was mit Ihrem Nachrichtenfeed passiert.",
+  "totalArticles": "Gesamtartikel",
+  "bookmarks": "Lesezeichen",
+  "sources": "Datenquellen",
+  "todaysNews": "Heutige Nachrichten",
+  "recentNews": "Aktuelle Nachrichten",
+  "readMore": "Weiterlesen",
+  "greeting": "Hallo, {{name}}! Willkommen zurück zu deinem personalisierten Nachrichten-Dashboard."
+}

@@ -1,0 +1,18 @@
+{
+  "loading": "Laden",
+  "error": "Fehler",
+  "success": "Erfolg",
+  "cancel": "Abbrechen",
+  "save": "Speichern",
+  "delete": "Löschen",
+  "edit": "Bearbeiten",
+  "add": "Hinzufügen",
+  "search": "Suchen",
+  "logout": "Abmelden",
+  "back": "Zurück",
+  "pagination": {
+    "showing": "Zeige {{start}} bis {{end}} von {{total}} Ergebnissen",
+    "previous": "Zurück",
+    "next": "Weiter"
+  }
+}

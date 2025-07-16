@@ -1,0 +1,10 @@
+{
+  "title": "Favoris",
+  "description": "Vos articles sauvegardés",
+  "loadingBookmarks": "Chargement des favoris...",
+  "failedToLoadBookmarks": "Impossible de charger les favoris",
+  "noBookmarksWithFilters": "Aucun article favori ne correspond à vos filtres.",
+  "noBookmarks": "Aucun article favori trouvé.",
+  "bookmarkRemoved": "Favori supprimé avec succès",
+  "failedToRemoveBookmark": "Impossible de supprimer le favori"
+} 

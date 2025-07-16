@@ -1,0 +1,18 @@
+{
+  "loading": "Chargement",
+  "error": "Erreur",
+  "success": "Succès",
+  "cancel": "Annuler",
+  "save": "Enregistrer",
+  "delete": "Supprimer",
+  "edit": "Modifier",
+  "add": "Ajouter",
+  "search": "Rechercher",
+  "logout": "Déconnexion",
+  "back": "Retour",
+  "pagination": {
+    "showing": "Affichage de {{start}} à {{end}} sur {{total}} résultats",
+    "previous": "Précédent",
+    "next": "Suivant"
+  }
+}

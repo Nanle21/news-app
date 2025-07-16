@@ -1,0 +1,10 @@
+{
+  "title": "Bookmarks",
+  "description": "Your saved articles",
+  "loadingBookmarks": "Loading bookmarks...",
+  "failedToLoadBookmarks": "Failed to load bookmarks",
+  "noBookmarksWithFilters": "No bookmarked articles match your filters.",
+  "noBookmarks": "No bookmarked articles found.",
+  "bookmarkRemoved": "Bookmark removed successfully",
+  "failedToRemoveBookmark": "Failed to remove bookmark"
+} 

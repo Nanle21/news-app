@@ -1,0 +1,12 @@
+{
+  "title": "Dashboard",
+  "description": "Your personalized news overview",
+  "greeting": "Welcome back, {{name}}!",
+  "totalArticles": "Total Articles",
+  "bookmarks": "Bookmarks",
+  "sources": "Data Sources",
+  "todaysNews": "Today's News",
+  "recentNews": "Recent News",
+  "readMore": "Read More",
+  "personalizedFeed": "Personalized"
+}
