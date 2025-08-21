@@ -1,5 +1,11 @@
 # 📰 Nanle News Aggregator
 
+<img width="1512" height="982" alt="Screenshot 2025-08-21 at 20 02 26" src="https://github.com/user-attachments/assets/a3de8220-ee8a-4706-9870-c0de9738d256" />
+
+Your personalized gateway to the world’s news. Discover, bookmark, and customize your news experience across sources and languages.
+
+
+
 A modern news aggregation platform built with **Laravel** (backend) and **React** (frontend).
 
 ## ✨ Features
